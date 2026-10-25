@@ -1,0 +1,33 @@
+name: ocr_expense_tracker
+description: Offline OCR expense tracker and receipt parser (Flutter, Tesseract, SQLite, CustomPainter).
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.0.7
+  sqflite_common_ffi: ^2.3.3
+  path: ^1.9.0
+  path_provider: ^2.1.2
+  intl: ^0.19.0
+  image: ^4.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+# Use the system libsqlite3 (Fedora: `sqlite-libs`) instead of downloading a
+# prebuilt binary. Honoured by sqlite3 >= 3.0 build hooks; ignored by older versions
+# (which load the system library by default on Linux).
+hooks:
+  user_defines:
+    sqlite3:
+      source: system
+
+flutter:
+  uses-material-design: true
